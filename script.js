@@ -98,13 +98,22 @@ $("textArea").addClass("future")
 $("button").on("click", function () {
 
     let input = $("textArea").val();
-    let timeOfInput = $(".hour")
+    let hour = JSON.stringify(calendarHours)
+    localStorage.setItem(hour, JSON.stringify(input))
 
-    localStorage.setItem(timeOfInput, JSON.stringify(input))
-    $("button").siblings(input)
+
+
     $(this).attr("data-time")
     console.log(this)
 })
+
+// for (let i = 0; i < localStorage.length; i++) {
+//     let key = localStorage.key(i);
+//     localStorage.getItem(key);
+// }
+
+localStorage.getItem("9AM")
+
 //Persist events between refreshes of a page
 // let saveBtn = $(".saveBtn");
 
